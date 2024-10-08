@@ -1,4 +1,4 @@
-name: PatunganYuk CRM Deployment
+name: Bintang Tobing Deployment
 
 on:
   push:
@@ -16,17 +16,7 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: "8.2"
-
-      - name: Install Dependencies
-        run: |
-          composer install
-          cp .env.example .env
-          php artisan key:generate --ansi
-
-      - name: Deploy Laravel Project
+      - name: Deploy HTML Project
         if: github.ref == 'refs/heads/main'
         run: |
           # Deploy application files
